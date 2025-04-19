@@ -19,6 +19,13 @@ we will use to flash coreboot.
 
 ![](/images/odroid-h4-ultra-flash-1.jpg)
 
+NOTE: It is important to note that there are tiny SMD resistors near the flash chips, which can be
+easily torn off when attaching the clip to the flash chips. Specifically, the resistor between pins
+7 and 8 of the first flash chip (said resistor is to the right of the `BIOS2` / `SPI_2` text in the
+picture) is very close to the flash chip and it has been broken off in at least one occasion, which
+made the board only boot from the second flash chip. The fix is simple: solder the missing resistor
+back, possibly further away from the flash chip. Its value can be found in the schematics.
+
 ### How to use the programmer
 
 To use the picoprog to read the NOR flash containing the firmware, we need to use a programmer
